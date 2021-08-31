@@ -1,5 +1,9 @@
 # Joplin Server
 
+[![Docker Build Status](https://img.shields.io/github/workflow/status/etechonomy/joplin-server/Build%20Container%20Images?logo=docker)](https://hub.docker.com/r/etechonomy/joplin-server) ![Docker Pulls](https://img.shields.io/docker/pulls/etechonomy/joplin-server?logo=docker)
+
+---
+
 Automated builds of **Joplin Server** in amd64, arm64, & arm/v7.
 
 This repository is configured with a GitHub Action that checks for new [Joplin Server](https://github.com/laurent22/joplin/blob/dev/readme/changelog_server.md) tags every 5 minutes. If a new version is found it will automatically update the tag in this repository and then kickoff another action to build new Joplin Server container images based on the latest tag.
