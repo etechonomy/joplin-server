@@ -1,0 +1,38 @@
+name: Check for updates
+
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout Code
+      uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.GH_PAT }} # Required due to: https://github.community/t/github-action-not-triggering-gh-pages-upon-push/16096
+
+    - run: |
+        RELEASE_VER=$(git -c 'versionsort.suffix=-' \
+            ls-remote --exit-code --refs --sort='version:refname' --tags https://github.com/laurent22/joplin.git 'server-*.*.*' \
+            | tail --lines=1 \
+            | cut --delimiter='-' --fields=2-)
+
+        LOCAL_VER=$(git -c 'versionsort.suffix=-' \
+            ls-remote --exit-code --refs --sort='version:refname' --tags https://github.com/etechonomy/docker-joplin-server.git \
+            | tail --lines=1 \
+            | cut --delimiter='/' --fields=3)
+
+        if [[ $RELEASE_VER != $LOCAL_VER ]]; then
+            echo "Local version: $LOCAL_VER"
+            echo "Latest upstream version: $RELEASE_VER"
+            echo "Updating to latest version..."
+            git tag ${RELEASE_VER}
+            git push origin ${RELEASE_VER}
+        else
+            echo "No updates available..."
+        fi
