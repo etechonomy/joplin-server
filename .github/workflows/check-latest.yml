@@ -23,7 +23,7 @@ jobs:
             | cut --delimiter='-' --fields=2-)
 
         LOCAL_VER=$(git -c 'versionsort.suffix=-' \
-            ls-remote --exit-code --refs --sort='version:refname' --tags https://github.com/etechonomy/docker-joplin-server.git \
+            ls-remote --exit-code --refs --sort='version:refname' --tags https://github.com/etechonomy/joplin-server.git \
             | tail --lines=1 \
             | cut --delimiter='/' --fields=3)
 
