@@ -29,6 +29,7 @@ jobs:
         with:
           images: etechonomy/joplin-server
           tags: |
+            type=ref,event=tag
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
