@@ -59,8 +59,8 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./joplin/
-          # file: ./joplin/Dockerfile.server
-          file: ./Dockerfile
+          file: ./joplin/Dockerfile.server
+          # file: ./Dockerfile
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
