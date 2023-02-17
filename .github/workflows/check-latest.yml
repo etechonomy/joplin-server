@@ -12,7 +12,7 @@ jobs:
     steps:
 
     - name: Checkout Code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         token: ${{ secrets.GH_PAT }} # Required due to: https://github.community/t/github-action-not-triggering-gh-pages-upon-push/16096
 
