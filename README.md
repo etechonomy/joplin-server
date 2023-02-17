@@ -35,7 +35,7 @@ I would recommend using a frontend webserver to run Joplin over HTTPS.
             - POSTGRES_DATABASE=joplin
             - POSTGRES_USER=joplin 
             - POSTGRES_PORT=5432 
-            - POSTGRES_HOST=db
+            - POSTGRES_HOST=joplin-db
             - DB_CLIENT=pg
         restart: unless-stopped
         ports:
