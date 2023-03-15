@@ -124,7 +124,7 @@ I would recommend using a frontend webserver to run Joplin over HTTPS.
     > **NOTE:** For a more complete view on how to deploy using Traefik, view: https://github.com/etho201/docker-pi-stacks
 
 ---
-## Developers Notes:
+## Developer's Notes:
 
 To create a new tag manually, run:
 
