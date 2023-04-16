@@ -41,7 +41,7 @@ I would recommend using a frontend webserver to run Joplin over HTTPS.
         ports:
           - 22300:22300
       joplin-db:
-        image: postgres:13.3 # latest as of 5/15/2021
+        image: postgres:15 # latest as of 4/16/2023
         container_name: joplin-db
         restart: unless-stopped
         ports:
@@ -62,7 +62,7 @@ I would recommend using a frontend webserver to run Joplin over HTTPS.
 
 - The following `docker-compose.yml` will make Joplin Server run and apply the labels to expose itself to Traefik.
 - Note that there are 2 networks in the example below, one to talk to traefik (`traefik_default`) and one between the Joplin Server and the Database, ensuring that these hosts are not exposed.
-- You may need to double check the entrypoint name (`websecure`) and certresolver (`lewildcardresolver`) to match your Traefik configuration
+- You may need to double check the entrypoint name (`websecure`) and certresolver (`lewildcardresolver`) match your Traefik configuration
 
     ```yaml
     ---
