@@ -100,7 +100,7 @@ I would recommend using a frontend webserver to run Joplin over HTTPS.
           - "traefik.http.services.joplin-svc.loadbalancer.server.port=22300"
 
       joplin-db:
-        image: postgres:13.3 # latest as of 5/15/2021
+        image: postgres:15 # latest as of 4/16/2023
         container_name: joplin-db
         environment:
         # ports:
