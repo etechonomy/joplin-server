@@ -54,7 +54,7 @@ RUN BUILD_SEQUENCIAL=1 yarn install --inline-builds \
 FROM node:16-bullseye-slim
 
 ARG user=joplin
-RUN useradd --create-home --shell /bin/bash $user
+RUN useradd --uid 1001 --create-home --shell /bin/bash $user
 
 USER $user
 
