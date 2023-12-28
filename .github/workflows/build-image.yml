@@ -23,7 +23,7 @@ jobs:
           ref: server-${{ env.RELEASE_VERSION }}
           path: joplin
 
-      - name: Checkout Joplin Server
+      - name: Checkout Joplin Server Private fix
         uses: actions/checkout@v4
         with:
           repository: etechonomy/joplin-server-private
