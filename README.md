@@ -6,7 +6,7 @@
 
 Automated builds of **Joplin Server** in `amd64`, `arm64`, & `arm/v7`.
 
-This repository is configured with a GitHub Action that checks for new [Joplin Server](https://github.com/laurent22/joplin/blob/dev/readme/changelog_server.md) tags every 5 minutes. If a new version is found it will automatically update the tag in this repository and then kickoff another action to build new Joplin Server container images based on the latest tag.
+This repository is configured with a GitHub Action that checks for new [Joplin Server](https://joplinapp.org/help/about/changelog/server/) tags every 5 minutes. If a new version is found it will automatically update the tag in this repository and then kickoff another action to build new Joplin Server container images based on the latest tag.
 
 Images can be found here:
 https://hub.docker.com/r/etechonomy/joplin-server
