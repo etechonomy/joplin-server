@@ -1,10 +1,12 @@
-# Joplin Server
-
 [![Docker Build Status](https://img.shields.io/github/actions/workflow/status/etechonomy/joplin-server/build-image.yml?logo=docker)](https://hub.docker.com/r/etechonomy/joplin-server) ![Docker Pulls](https://img.shields.io/docker/pulls/etechonomy/joplin-server?logo=docker)
 
 ---
 
-Automated builds of **Joplin Server** in `amd64`, `arm64`, & `arm/v7`.
+# Joplin Server
+
+![Joplin Server](JoplinServerIcon.svg)
+
+Automated builds of **Joplin Server** in `amd64` and `arm64`.
 
 This repository is configured with a GitHub Action that checks for new [Joplin Server](https://joplinapp.org/help/about/changelog/server/) tags every 5 minutes. If a new version is found it will automatically update the tag in this repository and then kickoff another action to build new Joplin Server container images based on the latest tag.
 
@@ -15,7 +17,20 @@ https://hub.docker.com/r/etechonomy/joplin-server
 
 ## Usage
 
-I would recommend using a frontend webserver to run Joplin over HTTPS.
+| Parameter | Description | Example |
+|-----------|-------------|---------|
+| `APP_BASE_URL` | This is the base public URL where the service will be running. | `http://joplin.yourdomain.tld` |
+| `APP_PORT` | The local port on which the Docker container will listen.  | `22300` |
+| `DB_CLIENT` | Database client | `pg` |
+| `POSTGRES_PASSWORD` |	Postgres DB password | `joplin` |
+| `POSTGRES_DATABASE` | Postgres DB database | `joplin` |
+| `POSTGRES_USER` | Postgres DB user | `joplin` |
+| `POSTGRES_PORT` | Postgres DB port | `5432` |
+| `POSTGRES_HOST` | Postgres DB host | `joplin-db` |
+
+> **NOTE:** :star: Follow the [official installation guide](https://github.com/laurent22/joplin/blob/dev/packages/server/README.md) for detailed information.
+
+---
 
 ### Generic docker-compose.yml
 
@@ -31,12 +46,12 @@ I would recommend using a frontend webserver to run Joplin over HTTPS.
         environment:
             - APP_BASE_URL=http://joplin.yourdomain.tld
             - APP_PORT=22300
+            - DB_CLIENT=pg
             - POSTGRES_PASSWORD=joplin
             - POSTGRES_DATABASE=joplin
             - POSTGRES_USER=joplin 
             - POSTGRES_PORT=5432 
             - POSTGRES_HOST=joplin-db
-            - DB_CLIENT=pg
         restart: unless-stopped
         ports:
           - 22300:22300
@@ -74,12 +89,12 @@ I would recommend using a frontend webserver to run Joplin over HTTPS.
         environment:
           - APP_BASE_URL=https://joplin.${FQDN}
           - APP_PORT=22300
+          - DB_CLIENT=pg
           - POSTGRES_PASSWORD=${JOPLIN_DB_PASS}
           - POSTGRES_DATABASE=joplin
           - POSTGRES_USER=joplin
           - POSTGRES_PORT=5432
           - POSTGRES_HOST=joplin-db
-          - DB_CLIENT=pg
         # ports:
         #   - 22300:22300
         restart: unless-stopped
@@ -92,10 +107,7 @@ I would recommend using a frontend webserver to run Joplin over HTTPS.
           - "traefik.http.routers.joplin-rtr.rule=Host(`joplin.$FQDN`)"
           - "traefik.http.routers.joplin-rtr.tls=true"
           ## Middlewares
-          - "traefik.http.routers.joplin-rtr.middlewares=chain-no-auth@file" # No Authentication
-          # - "traefik.http.routers.joplin-rtr.middlewares=chain-basic-auth@file" # Basic Authentication
-          # - "traefik.http.routers.joplin-rtr.middlewares=chain-oauth@file" # OAuth 2.0
-          ## HTTP Services
+          - "traefik.http.routers.joplin-rtr.middlewares=chain-no-auth@file"
           - "traefik.http.routers.joplin-rtr.service=joplin-svc"
           - "traefik.http.services.joplin-svc.loadbalancer.server.port=22300"
 
