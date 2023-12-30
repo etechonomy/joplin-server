@@ -4,9 +4,11 @@
 
 # Joplin Server
 
-![Joplin Server](JoplinServerIcon.svg)
-
 Automated builds of **Joplin Server** in `amd64` and `arm64`.
+
+<img src="JoplinServerIcon.svg" align="left" style="margin-right:15px"/>
+
+**Joplin Server** allows you to sync any Joplin client with it. It includes the ability to share a note with anyone, using a URL. When the note is changed, the content at the URL is changed too. It also features the ability to share a notebook with a user on the same Joplin Server instance. For example, if you share a notebook with another user, that user will see this notebook in their desktop or mobile app, and will be able to edit the notes.
 
 This repository is configured with a GitHub Action that checks for new [Joplin Server](https://joplinapp.org/help/about/changelog/server/) tags every 5 minutes. If a new version is found it will automatically update the tag in this repository and then kickoff another action to build new Joplin Server container images based on the latest tag.
 
@@ -16,6 +18,8 @@ https://hub.docker.com/r/etechonomy/joplin-server
 ---
 
 ## Usage
+
+The following table lists the configurable parameters of the joplin-server container image:
 
 | Parameter | Description | Example |
 |-----------|-------------|---------|
@@ -28,9 +32,11 @@ https://hub.docker.com/r/etechonomy/joplin-server
 | `POSTGRES_PORT` | Postgres DB port | `5432` |
 | `POSTGRES_HOST` | Postgres DB host | `joplin-db` |
 
-> **NOTE:** :star: Follow the [official installation guide](https://github.com/laurent22/joplin/blob/dev/packages/server/README.md) for detailed information.
+> **NOTE:** Follow the [official installation guide](https://github.com/laurent22/joplin/blob/dev/packages/server/README.md) for detailed information.
 
 ---
+
+Here are some example `docker-compose` files to help get you started:
 
 ### Generic docker-compose.yml
 
