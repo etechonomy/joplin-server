@@ -4,7 +4,7 @@
 
 # Joplin Server
 
-Automated builds of **Joplin Server** in `amd64` and `arm64`.
+Automated builds of **Joplin Server** in `amd64` and `arm64` &rarr; `docker pull etechonomy/joplin-server`
 
 <img src="JoplinServerIcon.svg" align="left" style="margin-right:15px"/>
 
@@ -19,7 +19,7 @@ https://hub.docker.com/r/etechonomy/joplin-server
 
 ## Usage
 
-The following table lists the configurable parameters of the joplin-server container image:
+The following table lists the configurable parameters of the `etechonomy/joplin-server` container image:
 
 | Parameter | Description | Example |
 |-----------|-------------|---------|
