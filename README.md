@@ -6,7 +6,7 @@
 
 Automated builds of **Joplin Server** in `amd64` and `arm64` &rarr; `docker pull etechonomy/joplin-server`
 
-<img src="JoplinServerIcon.svg" align="left" style="margin-right:15px"/>
+<img width=84 src="https://raw.githubusercontent.com/laurent22/joplin/dev/Assets/ImageSources/JoplinServerIcon.svg" align="left" style="margin-right:15px"/>
 
 **Joplin Server** allows you to sync any Joplin client with it. It includes the ability to share a note with anyone, using a URL. When the note is changed, the content at the URL is changed too. It also features the ability to share a notebook with a user on the same Joplin Server instance. For example, if you share a notebook with another user, that user will see this notebook in their desktop or mobile app, and will be able to edit the notes.
 
