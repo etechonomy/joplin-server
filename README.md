@@ -30,7 +30,7 @@ The following table lists the configurable parameters of the `etechonomy/joplin-
 | Parameter | Description | Example |
 |-----------|-------------|---------|
 | `APP_BASE_URL` | This is the base public URL where the service will be running. | `http://joplin.yourdomain.tld` |
-| `APP_PORT` | The local port on which the Docker container will listen.  | `22300` |
+| `APP_PORT` | The local port on which the container will listen.  | `22300` |
 | `DB_CLIENT` | Database client | `pg` |
 | `POSTGRES_PASSWORD` |	Postgres DB password | `joplin` |
 | `POSTGRES_DATABASE` | Postgres DB database | `joplin` |
