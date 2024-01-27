@@ -8,7 +8,7 @@ Here are some example `docker-compose` files to help get you started:
     ---
     version: '3.7'
     services:
-      joplin:
+      joplin-server:
         image: etechonomy/joplin-server:latest
         container_name: joplin-server
         environment:
@@ -24,7 +24,7 @@ Here are some example `docker-compose` files to help get you started:
         ports:
           - 22300:22300
       joplin-db:
-        image: postgres:15 # latest as of 4/16/2023
+        image: postgres:16 # latest as of 1/27/2024
         container_name: joplin-db
         restart: unless-stopped
         ports:
