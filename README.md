@@ -42,3 +42,4 @@ The following table lists the configurable parameters of the `etechonomy/joplin-
 
 - [Check here](./docs/docker-compose.md) for example `docker-compose.yml` files
 - Follow the [official installation guide](https://github.com/laurent22/joplin/blob/dev/packages/server/README.md) for detailed information.
+- Learn to upgrade your database version using my [database upgrade guide](docs/database-upgrades.md).
