@@ -1,5 +1,7 @@
 [![Docker Build Status](https://img.shields.io/github/actions/workflow/status/etechonomy/joplin-server/build-image.yml?logo=docker)](https://hub.docker.com/r/etechonomy/joplin-server) ![GitHub Tag](https://img.shields.io/github/v/tag/etechonomy/joplin-server?logo=joplin&label=latest%20version&labelColor=%23065abd&color=grey) ![Docker Pulls](https://img.shields.io/docker/pulls/etechonomy/joplin-server?logo=docker)
 
+I work hard to maintain this image. If you find this useful, please consider supporting my efforts by using one of the following methods:
+<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'N4N2UGS4G');kofiwidget2.draw();</script> 
 <a href="https://www.buymeacoffee.com/etechonomy" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ---
