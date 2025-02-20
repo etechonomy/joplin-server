@@ -23,12 +23,12 @@ jobs:
           ref: server-${{ env.RELEASE_VERSION }}
           path: joplin
 
-      # - name: Checkout Joplin Server Private fix
-      #   uses: actions/checkout@v4
-      #   with:
-      #     repository: etechonomy/joplin-server-private
-      #     path: joplin-server-private
-      #     token: ${{ secrets.GH_PAT }}
+      - name: Checkout Joplin Server Private fix
+        uses: actions/checkout@v4
+        with:
+          repository: etechonomy/joplin-server-private
+          path: joplin-server-private
+          token: ${{ secrets.GH_PAT }}
 
       - name: Docker meta
         id: meta
@@ -58,8 +58,8 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./joplin/
-          file: ./joplin/Dockerfile.server
-          # file: ./joplin-server-private/Dockerfile.server
+          # file: ./joplin/Dockerfile.server
+          file: ./joplin-server-private/Dockerfile.server
           # platforms: linux/amd64,linux/arm64,linux/arm/v7
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
