@@ -26,8 +26,8 @@ jobs:
       - name: Checkout Joplin Server fix for ARM
         uses: actions/checkout@v4
         with:
-          repository: etechonomy/joplin-server-private
-          path: joplin-server-private
+          repository: etechonomy/joplin-arm-fix
+          path: joplin-arm-fix
           token: ${{ secrets.GH_PAT }}
 
       - name: Docker meta
@@ -59,7 +59,7 @@ jobs:
         with:
           context: ./joplin/
           # file: ./joplin/Dockerfile.server
-          file: ./joplin-server-private/Dockerfile.server
+          file: ./joplin-arm-fix/Dockerfile.server
           # platforms: linux/amd64,linux/arm64,linux/arm/v7
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
