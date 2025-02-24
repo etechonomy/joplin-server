@@ -1,4 +1,4 @@
-[![Docker Build Status](https://img.shields.io/github/actions/workflow/status/etechonomy/joplin-server/build-image.yml?logo=docker)](https://hub.docker.com/r/etechonomy/joplin-server) ![GitHub Tag](https://img.shields.io/github/v/tag/etechonomy/joplin-server?logo=joplin&label=latest%20version&labelColor=%23065abd&color=grey) ![Docker Pulls](https://img.shields.io/docker/pulls/etechonomy/joplin-server?logo=docker)
+[![Docker Build Status](https://img.shields.io/github/actions/workflow/status/etechonomy/joplin-server/build-image.yml?logo=docker)](https://hub.docker.com/r/etechonomy/joplin-server) [![GitHub Tag](https://img.shields.io/github/v/tag/etechonomy/joplin-server?logo=joplin&label=latest%20version&labelColor=%23065abd&color=grey)](https://joplinapp.org/help/about/changelog/server/) [![Docker Pulls](https://img.shields.io/docker/pulls/etechonomy/joplin-server?logo=docker)](https://hub.docker.com/r/etechonomy/joplin-server)
 
 I work hard to maintain this image. If you find this useful, please consider supporting my efforts by using one of the following methods:<br />
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N2UGS4G)<br />
