@@ -1,8 +1,7 @@
 [![Docker Build Status](https://img.shields.io/github/actions/workflow/status/etechonomy/joplin-server/build-image.yml?logo=docker)](https://hub.docker.com/r/etechonomy/joplin-server) [![GitHub Tag](https://img.shields.io/github/v/tag/etechonomy/joplin-server?logo=joplin&label=latest%20version&labelColor=%23065abd&color=grey)](https://joplinapp.org/help/about/changelog/server/) [![Docker Pulls](https://img.shields.io/docker/pulls/etechonomy/joplin-server?logo=docker)](https://hub.docker.com/r/etechonomy/joplin-server)
 
-I work hard to maintain this image. If you find this useful, please consider supporting my efforts by using one of the following methods:<br />
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N2UGS4G)<br />
-<a href="https://www.buymeacoffee.com/etechonomy" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+:pray: I put a lot of care and effort into maintaining this, and I truly appreciate your support. If you find it helpful, please consider supporting my work through one of the following methods: :pray:<br />
+<a href="https://www.buymeacoffee.com/etechonomy" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>&emsp;[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N2UGS4G)
 
 ---
 
@@ -10,11 +9,11 @@ I work hard to maintain this image. If you find this useful, please consider sup
 
 This repo provides automated builds of **Joplin Server** in `amd64` and `arm64` &rarr; `docker pull etechonomy/joplin-server`
 
-![joplin](/docs/joplin-server.png)
-
 <img width=84 src="https://raw.githubusercontent.com/laurent22/joplin/dev/Assets/ImageSources/JoplinServerIcon.svg" align="left" style="margin-right:15px"/>
 
 **Joplin Server** allows you to sync any Joplin client with it. It includes the ability to share a note with anyone, using a URL. When the note is changed, the content at the URL is changed too. It also features the ability to share a notebook with a user on the same Joplin Server instance. For example, if you share a notebook with another user, that user will see this notebook in their desktop or mobile app, and will be able to edit the notes.
+
+![joplin](/docs/joplin-server.png)
 
 ---
 
