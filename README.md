@@ -22,14 +22,14 @@ This repo provides automated builds of **Joplin Server** in `amd64` and `arm64` 
 This repository is configured with a GitHub Action that checks for new [Joplin Server](https://joplinapp.org/help/about/changelog/server/) tags every 5 minutes. If a new version is found it will automatically update the tag in this repository and then kickoff another action to build new Joplin Server container images based on the latest tag.
 
 Images can be found here:
-https://hub.docker.com/r/etechonomy/joplin-server
+[https://ghcr.io/etechonomy/joplin-server](https://ghcr.io/etechonomy/joplin-server)
 
 
 ---
 
 ## Usage
 
-The following table lists the configurable parameters of the `etechonomy/joplin-server` container image:
+The following table lists the configurable parameters of the `ghcr.io/etechonomy/joplin-server` container image:
 
 | Parameter | Description | Example |
 |-----------|-------------|---------|
