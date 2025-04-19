@@ -9,7 +9,7 @@ Here are some example `docker-compose` files to help get you started:
     version: '3.7'
     services:
       joplin-server:
-        image: etechonomy/joplin-server:latest
+        image: ghcr.io/etechonomy/joplin-server:latest
         container_name: joplin-server
         environment:
             - APP_BASE_URL=http://joplin.yourdomain.tld
@@ -46,7 +46,7 @@ Here are some example `docker-compose` files to help get you started:
     version: "3.7"
     services:
       joplin:
-        image: etechonomy/joplin-server:latest
+        image: ghcr.io/etechonomy/joplin-server:latest
         container_name: joplin-server
         environment:
           - APP_BASE_URL=https://joplin.${FQDN}
