@@ -81,7 +81,8 @@ jobs:
           # platforms: linux/amd64,linux/arm64,linux/arm/v7
           platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
-          outputs: type=image,"name=${{ env.DOCKERHUB_REPO }},${{ env.GHCR_REPO }}",push-by-digest=true,name-canonical=true,push=true
+          # outputs: type=image,"name=${{ env.DOCKERHUB_REPO }},${{ env.GHCR_REPO }}",push-by-digest=true,name-canonical=true,push=true
+          outputs: type=image,"name=${{ env.GHCR_REPO }}",push-by-digest=true,name-canonical=true,push=true
 
       - name: Export digest
         run: |
@@ -152,8 +153,8 @@ jobs:
           # docker buildx imagetools inspect ${{ env.DOCKERHUB_REPO }}:${{ steps.meta.outputs.version }}
           docker buildx imagetools inspect ${{ env.GHCR_REPO }}:${{ steps.meta.outputs.version }}
 
-      - name: Checkout README
-        uses: actions/checkout@v4
+      # - name: Checkout README
+      #   uses: actions/checkout@v4
 
       # - name: Update repo description
       #   uses: peter-evans/dockerhub-description@v4
