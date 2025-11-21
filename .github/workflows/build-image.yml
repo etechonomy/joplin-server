@@ -33,7 +33,7 @@ jobs:
           echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
           
       - name: Checkout Joplin Server
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: laurent22/joplin
           ref: server-${{ env.RELEASE_VERSION }}
@@ -41,7 +41,7 @@ jobs:
 
       #- name: Checkout Joplin Server ARM fix
       #  if: matrix.platform == 'linux/arm64'
-      #  uses: actions/checkout@v4
+      #  uses: actions/checkout@v5
       #  with:
       #    repository: etechonomy/joplin-arm-fix
       #    path: joplin-arm-fix
