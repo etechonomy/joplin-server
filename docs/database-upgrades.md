@@ -54,14 +54,20 @@ HINT:  Rebuild all objects in this database that use the default collation and r
 ```
 
 
-This can be fixed by running:
+This can be fixed by performing a restore on a clean database.
 
-1. `docker kill joplin-server`
+## Joplin Server will not start due to migration directory corruption
 
-2. `docker exec joplin-db reindexdb -U joplin -d joplin`
-	> **NOTE:** This takes a while to run and may not be necessary. Consider skipping this step and see if step 3 fixes the problem on its own.
+If you see errors like this:
 
+```txt
+Error: The migration directory is corrupt, the following files are missing: 20250404091200_user_auth_code.js, 20250720103211_fix_sso_auth_code_expire_at.js
+```
 
-3. `docker exec -it joplin-db psql -U joplin -d joplin -c "ALTER DATABASE joplin REFRESH COLLATION VERSION;"`
+1. Connect to the Joplin database with a tool such as PGAdmin (uncomment from `compose.yaml` and deploy/connect in the browser) and manually editting the `knex_migrations` table. Delete the rows specified in the logs.
 
-4. `docker restart joplin-db joplin-server`
+	**Example:**
+
+	![Migration Directory Corruption](images/migration-directory-corruption.png)
+
+2. Continue watching the logs. Once the affected rows are removed you should see the server start normally.

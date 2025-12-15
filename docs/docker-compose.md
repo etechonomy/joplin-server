@@ -1,8 +1,8 @@
 Here are some example `docker-compose` files to help get you started:
 
-### Generic docker-compose.yml
+### Generic compose.yaml
 
-- This is a barebones `docker-compose.yml` example. It is recommended to use a webserver in front of the instance to run it over HTTPS. See the example below using Traefik.
+- This is a barebones `compose.yaml` example. It is recommended to use a webserver in front of the instance to run it over HTTPS. See the example below using Traefik.
 
     ```yaml
     ---
@@ -37,9 +37,9 @@ Here are some example `docker-compose` files to help get you started:
           - POSTGRES_DB=joplin
     ```
 
-### Traefik docker-compose.yml
+### Traefik compose.yaml
 
-- The following `docker-compose.yml` will make Joplin Server run and apply the labels to expose itself to Traefik.
+- The following `compose.yaml` will make Joplin Server run and apply the labels to expose itself to Traefik.
 
     ```yaml
     ---
@@ -88,6 +88,19 @@ Here are some example `docker-compose` files to help get you started:
         restart: unless-stopped
         networks:
           - backend
+
+      # Uncommnect to troubleshoot database issues
+      # pgadmin:
+      #   image: dpage/pgadmin4:latest
+      #   container_name: pgadmin
+      #   restart: no
+      #   networks:
+      #     - traefik
+      #   ports:
+      #     - 8081:80
+      #   environment:
+      #     PGADMIN_DEFAULT_EMAIL: ${EMAIL}
+      #     PGADMIN_DEFAULT_PASSWORD: ${JOPLIN_DB_PASS}
 
     networks:
       backend:
