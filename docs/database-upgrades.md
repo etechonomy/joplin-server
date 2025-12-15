@@ -43,15 +43,15 @@
 
 ## Database collation version mismatch
 
-1. If you see the following messages in the database logs:
+If you see the following messages in the database logs:
 
-	```txt
-	database "joplin" has a collation version mismatch
+```txt
+database "joplin" has a collation version mismatch
 
-	The database was created using collation version 2.36, but the operating system provides version 2.41.
+The database was created using collation version 2.36, but the operating system provides version 2.41.
 
-	HINT:  Rebuild all objects in this database that use the default collation and run ALTER DATABASE joplin REFRESH COLLATION VERSION, or build PostgreSQL with the right library version.
-	```
+HINT:  Rebuild all objects in this database that use the default collation and run ALTER DATABASE joplin REFRESH COLLATION VERSION, or build PostgreSQL with the right library version.
+```
 
 
 This can be fixed by running:
